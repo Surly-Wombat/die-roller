@@ -159,3 +159,29 @@ document.getElementById("stealth").onclick = function() {
 document.getElementById("survival").onclick = function() {
     rollCheck("Survival Check",wis);
 }
+
+document.getElementById("initiative").onclick = function() {
+    rollCheck("Initiative",dex);
+}
+
+document.getElementById("deathSave").onclick = function() {
+    let roll = rollDie(20);
+    if (roll == 1) {
+        window.alert("Nat 1! 2 fails");
+    }
+    else if (roll == 20) {
+        window.alert("Nat 20! Full success");
+    }
+    else if (roll < 10) {
+        window.alert(`${roll}: 1 fail`)
+    }
+    else {
+        window.alert(`${roll}: 1 success`)
+    }
+}
+
+document.getElementById("hitDie").onclick = function() {
+    roll = rollDie(8);
+    hp = roll + con;
+    window.alert(`Hit Die: ${roll} + ${con} = ${hp}`);
+}
