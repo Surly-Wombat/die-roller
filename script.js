@@ -8,6 +8,8 @@ let cha = 2;
 //proficiency and expertise (Rogue)
 let prof = 2;
 let expert = prof;
+//number of d6 for sneak attack (Rogue)
+let sneakDice = 1;
 
 function rollDie(sides) {
     return Math.ceil(Math.random() * sides);
@@ -22,6 +24,14 @@ function rollCheck(name, modifier) {
     else {
         window.alert(`${name}: ${natRoll} - ${Math.abs(modifier)} = ${dirtyRoll}`);
     }
+}
+
+function sneakDamage() {
+    let damage = 0;
+    for(let i = 0; i < sneakDice; i++) {
+        damage += rollDie(6);
+    }
+    return damage;
 }
 
 document.getElementById("flatJump").onclick = function () {
@@ -200,4 +210,34 @@ document.getElementById("hitDie").onclick = function() {
     roll = rollDie(8);
     hp = roll + con;
     window.alert(`Hit Die: ${roll} + ${con} = ${hp}`);
+}
+
+document.getElementById("normalAttack").onclick = function() {
+    let modifier = dex + prof;
+    rollCheck("Normal Attack",modifier);
+}
+
+document.getElementById("shortsword").onclick = function() {
+    let roll = rollDie(6);
+    let damage = roll + dex;
+    window.alert(`Shortsword Damage: ${roll} + ${dex} = ${damage}`);
+}
+
+document.getElementById("shortswordSneak").onclick = function() {
+    let roll = rollDie(6);
+    let modifier = dex + sneakDamage();
+    let damage = roll + modifier;
+    window.alert(`Shortsword Damage: ${roll} + ${modifier} = ${damage}`);
+}
+
+document.getElementById("shortswordSecond").onclick = function() {
+    let roll = rollDie(6);
+    window.alert(`Shortsword Damage: ${roll}`);
+}
+
+document.getElementById("shortswordSecondSneak").onclick = function() {
+    let roll = rollDie(6);
+    let modifier = sneakDamage();
+    let damage = roll + modifier;
+    window.alert(`Shortsword Damage: ${roll} + ${modifier} = ${damage}`);
 }
