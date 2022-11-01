@@ -26,6 +26,14 @@ function rollCheck(name,modifier) {
   }
 }
 
+document.getElementById("flatJump").onclick = function() {
+  document.getElementById("flatBookmark").scrollIntoView(true);
+}
+
+document.getElementById("saveJump").onclick = function() {
+  document.getElementById("saveBookmark").scrollIntoView(true);
+}
+
 document.getElementById("strFlat").onclick = function() {
   rollCheck("Flat Strength",str);
 }
