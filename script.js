@@ -55,3 +55,29 @@ document.getElementById("wisFlat").onclick = function() {
 document.getElementById("chaFlat").onclick = function() {
   rollCheck("Flat Charisma",cha)
 }
+
+document.getElementById("strSave").onclick = function() {
+  rollCheck("Strength Save",str);
+}
+
+document.getElementById("dexSave").onclick = function() {
+  let modifier = dex + prof;
+  rollCheck("Dexterity Save",modifier);
+}
+
+document.getElementById("conSave").onclick = function() {
+  rollCheck("Constitution Save",con);
+}
+
+document.getElementById("intSave").onclick = function() {
+  let modifier = int + prof;
+  rollCheck("Intelligence Save",modifier);
+}
+
+document.getElementById("wisSave").onclick = function() {
+  rollCheck("Wisdom Save",wis);
+}
+
+document.getElementById("chaSave").onclick = function() {
+  rollCheck("Charisma Save",cha);
+}
