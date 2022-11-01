@@ -32,6 +32,22 @@ document.getElementById("saveJump").onclick = function () {
     document.getElementById("saveBookmark").scrollIntoView(true);
 }
 
+document.getElementById("skillJump").onclick = function () {
+    document.getElementById("skillBookmark").scrollIntoView(true);
+}
+
+document.getElementById("specialJump").onclick = function () {
+    document.getElementById("specialBookmark").scrollIntoView(true);
+}
+
+document.getElementById("attackJump").onclick = function () {
+    document.getElementById("attackBookmark").scrollIntoView(true);
+}
+
+document.getElementById("spellJump").onclick = function () {
+    document.getElementById("spellBookmark").scrollIntoView(true);
+}
+
 document.getElementById("strFlat").onclick = function () {
     rollCheck("Flat Strength", str);
 }
