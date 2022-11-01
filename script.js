@@ -15,14 +15,11 @@ function rollDie(sides) {
 function rollCheck(name,modifier) {
   natRoll = Math.ceil(Math.random() * 20);
   dirtyRoll = natRoll + modifier;
-  if(natRoll == 1) {
-    window.alert(`${name}: Nat 1! (${dirtyRoll})`);
-  }
-  else if(natRoll == 20) {
-    window.alert(`${name}: Nat 20! (${dirtyRoll})`);
+  if(modifier >= 0) {
+    window.alert(`${name}: ${natRoll} + ${modifier} = ${dirtyRoll}`);
   }
   else {
-    window.alert(`${name}: ${dirtyRoll}`);
+    window.alert(`${name}: ${natRoll} - ${Math.abs(modifier)} = ${dirtyRoll}`);
   }
 }
 
