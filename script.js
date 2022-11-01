@@ -5,8 +5,9 @@ let con = 1;
 let int = 0;
 let wis = 1;
 let cha = 2;
-let proficiency = 2;
-let expertise = proficiency;
+//proficiency and expertise (Rogue)
+let prof = 2;
+let expert = prof;
 
 function rollDie(sides) {
   return Math.ceil(Math.random() * sides);
