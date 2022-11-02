@@ -227,17 +227,43 @@ document.getElementById("shortswordSneak").onclick = function() {
     let roll = rollDie(6);
     let modifier = dex + sneakDamage();
     let damage = roll + modifier;
-    window.alert(`Shortsword Damage: ${roll} + ${modifier} = ${damage}`);
+    window.alert(`Shortsword Sneak Damage: ${roll} + ${modifier} = ${damage}`);
 }
 
 document.getElementById("shortswordSecond").onclick = function() {
     let roll = rollDie(6);
-    window.alert(`Shortsword Damage: ${roll}`);
+    window.alert(`Second Shortsword Damage: ${roll}`);
 }
 
 document.getElementById("shortswordSecondSneak").onclick = function() {
     let roll = rollDie(6);
     let modifier = sneakDamage();
     let damage = roll + modifier;
-    window.alert(`Shortsword Damage: ${roll} + ${modifier} = ${damage}`);
+    window.alert(`Second Shortsword Sneak Damage: ${roll} + ${modifier} = ${damage}`);
+}
+
+document.getElementById("blaster").onclick = function() {
+    let roll = rollDie(8);
+    let damage = roll + dex;
+    window.alert(`Blaster Damage: ${roll} + ${dex} = ${damage}`);
+}
+
+document.getElementById("blasterSneak").onclick = function() {
+    let roll = rollDie(8);
+    let modifier = dex + sneakDamage();
+    let damage = roll + modifier;
+    window.alert(`Blaster Sneak Damage: ${roll} + ${modifier} = ${damage}`);
+}
+
+document.getElementById("dagger").onclick = function() {
+    let roll = rollDie(4);
+    let damage = roll + dex;
+    window.alert(`Dagger Damage: ${roll} + ${dex} = ${damage}`);
+}
+
+document.getElementById("daggerSneak").onclick = function() {
+    let roll = rollDie(4);
+    let modifier = dex + sneakDamage();
+    let damage = roll + modifier;
+    window.alert(`Dagger Sneak Damage: ${roll} + ${modifier} = ${damage}`);
 }
