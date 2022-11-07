@@ -15,6 +15,14 @@ function rollDie(sides) {
     return Math.ceil(Math.random() * sides);
 }
 
+function rollDice(rolls,sides) {
+    let result = 0;
+    for(let i = 0; i < rolls; i++) {
+        result += rollDie(sides);
+    }
+    return result;
+}
+
 function rollCheck(name, modifier) {
     natRoll = Math.ceil(Math.random() * 20);
     dirtyRoll = natRoll + modifier;
@@ -24,14 +32,6 @@ function rollCheck(name, modifier) {
     else {
         window.alert(`${name}: ${natRoll} - ${Math.abs(modifier)} = ${dirtyRoll}`);
     }
-}
-
-function sneakDamage() {
-    let damage = 0;
-    for(let i = 0; i < sneakDice; i++) {
-        damage += rollDie(6);
-    }
-    return damage;
 }
 
 document.getElementById("flatJump").onclick = function () {
@@ -225,7 +225,7 @@ document.getElementById("shortsword").onclick = function() {
 
 document.getElementById("shortswordSneak").onclick = function() {
     let roll = rollDie(6);
-    let modifier = dex + sneakDamage();
+    let modifier = dex + rollDice(sneakDice,6);
     let damage = roll + modifier;
     window.alert(`Shortsword Sneak Damage: ${roll} + ${modifier} = ${damage}`);
 }
@@ -237,7 +237,7 @@ document.getElementById("shortswordSecond").onclick = function() {
 
 document.getElementById("shortswordSecondSneak").onclick = function() {
     let roll = rollDie(6);
-    let modifier = sneakDamage();
+    let modifier = rollDice(sneakDice,6);
     let damage = roll + modifier;
     window.alert(`Second Shortsword Sneak Damage: ${roll} + ${modifier} = ${damage}`);
 }
@@ -250,7 +250,7 @@ document.getElementById("blaster").onclick = function() {
 
 document.getElementById("blasterSneak").onclick = function() {
     let roll = rollDie(8);
-    let modifier = dex + sneakDamage();
+    let modifier = dex + rollDice(sneakDice,6);
     let damage = roll + modifier;
     window.alert(`Blaster Sneak Damage: ${roll} + ${modifier} = ${damage}`);
 }
@@ -263,7 +263,7 @@ document.getElementById("dagger").onclick = function() {
 
 document.getElementById("daggerSneak").onclick = function() {
     let roll = rollDie(4);
-    let modifier = dex + sneakDamage();
+    let modifier = dex + rollDice(sneakDice,6);
     let damage = roll + modifier;
     window.alert(`Dagger Sneak Damage: ${roll} + ${modifier} = ${damage}`);
 }

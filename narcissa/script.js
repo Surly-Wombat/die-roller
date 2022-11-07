@@ -104,7 +104,7 @@ document.getElementById("wisSave").onclick = function () {
 }
 
 document.getElementById("chaSave").onclick = function () {
-    let modifier = con + prof;
+    let modifier = cha + prof;
     rollCheck("Charisma Save", modifier);
 }
 
@@ -206,7 +206,7 @@ document.getElementById("deathSave").onclick = function() {
 }
 
 document.getElementById("hitDie").onclick = function() {
-    roll = rollDie(8);
+    roll = rollDie(6);
     hp = roll + con;
     window.alert(`Hit Die: ${roll} + ${con} = ${hp}`);
 }
