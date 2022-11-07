@@ -1,10 +1,6 @@
 body {
     line-height: 200%;
     text-align: center;
-    background-image: url(/die-roller/assets/background.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
 }
 
 button {
@@ -21,4 +17,13 @@ button {
     height: 100vh;
     left: 50%;
     transform: translate(-50%, 0);
+}
+
+#bgimage {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
 }
