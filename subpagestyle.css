@@ -10,6 +10,10 @@ body {
 button {
     width: 150px;
     line-height: 150%;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #e4e4e4;
+    color: black;
 }
 
 #bg {
