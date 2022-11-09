@@ -8,7 +8,7 @@ let cha = 3;
 //proficiency
 let prof = 2;
 //spell attack modifier
-let spell = 5;
+let spell = cha + prof;
 
 function rollDie(sides) {
     return Math.ceil(Math.random() * sides);
